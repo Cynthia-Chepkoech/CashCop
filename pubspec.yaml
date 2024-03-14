@@ -27,7 +27,7 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
-dependencies:
+dependencies:fl_chart:
   flutter:
     sdk: flutter
 
@@ -78,6 +78,8 @@ flutter:
     - family: Roboto
       fonts:
         - asset: fonts/Roboto/Roboto-Regular.ttf
+dependencies:
+  fl_chart: ^0.66.2
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
