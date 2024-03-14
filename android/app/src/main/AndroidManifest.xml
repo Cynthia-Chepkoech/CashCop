@@ -2,7 +2,7 @@
     <application
         android:label="cashcop"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/mylogo">
         <activity
             android:name=".MainActivity"
             android:exported="true"
