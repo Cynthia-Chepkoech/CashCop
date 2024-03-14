@@ -10,7 +10,12 @@ class Homescreen extends StatelessWidget {
     return Column(children: [
       Container(
         padding: const EdgeInsets.all(12),
-        color: Colors.purple.shade400,
+        decoration: BoxDecoration(
+            color: Colors.purple.shade200,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            )),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -47,19 +52,24 @@ class Homescreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MyCard(
-                  title: "Income",
-                  amount: "Ksh 15000",
-                  color: Colors.green.shade200,
-                  icon: const Icon(Icons.download, color: Colors.green),
+                Expanded(
+                  child: MyCard(
+                    title: "Income",
+                    amount: "Ksh 15000",
+                    color: Colors.green.shade200,
+                    icon: const Icon(Icons.download, color: Colors.green),
+                  ),
                 ),
-                MyCard(
-                  title: "Expense",
-                  amount: "Ksh 1500",
-                  color: Colors.red.shade200,
-                  icon: const Icon(
-                    Icons.upload,
-                    color: Colors.red,
+                SizedBox(width: 16),
+                Expanded(
+                  child: MyCard(
+                    title: "Expense",
+                    amount: "Ksh 1500",
+                    color: Colors.red.shade200,
+                    icon: const Icon(
+                      Icons.upload,
+                      color: Colors.red,
+                    ),
                   ),
                 ),
               ],
