@@ -10,7 +10,12 @@ class Homescreen extends StatelessWidget {
     return Column(children: [
       Container(
         padding: const EdgeInsets.all(12),
-        color: Colors.purple.shade400,
+        decoration: BoxDecoration(
+            color: Colors.purple.shade200,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            )),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -47,19 +52,24 @@ class Homescreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                MyCard(
-                  title: "Income",
-                  amount: "Ksh 15000",
-                  color: Colors.green.shade200,
-                  icon: const Icon(Icons.download, color: Colors.green),
+                Expanded(
+                  child: MyCard(
+                    title: "Income",
+                    amount: "Ksh 15000",
+                    color: Colors.green.shade200,
+                    icon: const Icon(Icons.download, color: Colors.green),
+                  ),
                 ),
-                MyCard(
-                  title: "Expense",
-                  amount: "Ksh 1500",
-                  color: Colors.red.shade200,
-                  icon: const Icon(
-                    Icons.upload,
-                    color: Colors.red,
+                SizedBox(width: 16),
+                Expanded(
+                  child: MyCard(
+                    title: "Expense",
+                    amount: "Ksh 1500",
+                    color: Colors.red.shade200,
+                    icon: const Icon(
+                      Icons.upload,
+                      color: Colors.red,
+                    ),
                   ),
                 ),
               ],
@@ -69,24 +79,74 @@ class Homescreen extends StatelessWidget {
       ),
 
       // Transactions
-      Container(
-          padding: const EdgeInsets.all(12),
-          child:
-              const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text("Recent Transactions"),
-            SizedBox(
-              height: 8,
-            ),
-            TransactionCard(
-                icon: Icon(
-                  Icons.upload,
-                  color: Colors.red,
-                ),
-                title: "Food Plus",
-                subtitle: "Food",
-                day: "Today",
-                amount: "Ksh 500"),
-          ]))
+      Expanded(
+        child: Container(
+            padding: const EdgeInsets.all(12),
+            child: SingleChildScrollView(
+              child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Recent Transactions"),
+                        Text("View All"),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    TransactionCard(
+                        icon: Icon(
+                          Icons.upload,
+                          color: Colors.red,
+                        ),
+                        title: "Food Plus",
+                        subtitle: "Food",
+                        day: "Today",
+                        amount: "Ksh 500"),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    TransactionCard(
+                        icon: Icon(
+                          Icons.upload,
+                          color: Colors.red,
+                        ),
+                        title: "Shopping",
+                        subtitle: "Groceries",
+                        day: "Today",
+                        amount: "Ksh 250"),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    TransactionCard(
+                        icon: Icon(
+                          Icons.upload,
+                          color: Colors.red,
+                        ),
+                        title: "Entertainment",
+                        subtitle: "Swimming",
+                        day: "Today",
+                        amount: "Ksh 250"),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    TransactionCard(
+                        icon: Icon(
+                          Icons.upload,
+                          color: Colors.red,
+                        ),
+                        title: "Travel",
+                        subtitle: "School",
+                        day: "Today",
+                        amount: "Ksh 250"),
+                    SizedBox(
+                      height: 8,
+                    ),
+                  ]),
+            )),
+      )
     ]);
   }
 }
