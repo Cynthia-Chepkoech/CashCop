@@ -1,4 +1,5 @@
 import 'package:cashcop/pages/homepage.dart';
+import 'package:cashcop/pages/profilepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
-      home: const Homepage()
+      home: const ProfilePage()
     );
   }
 }
