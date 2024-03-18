@@ -1,3 +1,5 @@
+import 'package:cashcop/components/drawer.dart';
+import 'package:cashcop/pages/profilepage.dart';
 import 'package:cashcop/screens/addscreen.dart';
 import 'package:cashcop/screens/homescreen.dart';
 import 'package:cashcop/screens/notificationscreen.dart';
@@ -22,17 +24,31 @@ class _HomepageState extends State<Homepage> {
     const Profile()
   ];
   int selectedIndex = 0;
+
+  get signOut => null;
   void changeTab(index) {
     setState(() {
       selectedIndex = index;
     });
   }
 
+  void goToProfilePage() {
+    Navigator.pop(context);
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ProfilePage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple.shade200,
+      backgroundColor: Colors.purple.shade100,
+      
       body: screens[selectedIndex],
+      
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedIndex,
           showSelectedLabels: false,

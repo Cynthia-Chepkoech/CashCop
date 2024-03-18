@@ -1,4 +1,5 @@
 import 'package:cashcop/pages/homepage.dart';
+import 'package:cashcop/pages/profilepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,13 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'CashCop',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-          fontFamily: 'Roboto',
-        ),
-        home: const Homepage());
+      debugShowCheckedModeBanner: false,
+      title: 'CashCop',
+      theme: ThemeData(
+        
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+        fontFamily: 'Roboto',
+      ),
+      home: const ProfilePage()
+    );
   }
 }
