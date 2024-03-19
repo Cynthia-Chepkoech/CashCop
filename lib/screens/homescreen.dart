@@ -3,7 +3,8 @@ import 'package:cashcop/components/transactioncard.dart';
 import 'package:flutter/material.dart';
 
 class Homescreen extends StatelessWidget {
-  const Homescreen({super.key});
+  final String? name;
+  const Homescreen({super.key, this.name});
 
   @override
   Widget build(BuildContext context) {

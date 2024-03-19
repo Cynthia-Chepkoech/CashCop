@@ -28,12 +28,8 @@ class _AddscreenState extends State<Addscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Add Record"),
-        centerTitle: true,
-      ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24),
         decoration: BoxDecoration(color: Colors.grey.shade200),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
