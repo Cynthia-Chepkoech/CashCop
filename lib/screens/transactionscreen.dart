@@ -1,46 +1,67 @@
+import 'package:cashcop/components/transactioncard.dart';
+import 'package:cashcop/components/chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Transactions extends StatelessWidget {
   const Transactions({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Analytics'),
-          centerTitle: true,
+    return Column(
+      children: [
+        Expanded(
+          flex: 2,
+          child: Container(
+            padding: const EdgeInsets.only(top: 32, left: 12, right: 12),
+            color: Colors.purpleAccent,
+            child: const Center(child: LineChartWidget()),
+          ),
         ),
-        body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        SizedBox(
+          height: 12,
+        ),
+        const Expanded(
+          flex: 1,
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 12),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                    padding: EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.purple.shade300),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "Income",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () {},
-                            child: Text("Expense",
-                                style: TextStyle(color: Colors.white)),
-                          ),
-                        ],
-                      ),
-                    )),
+                TransactionCard(
+                    icon: Icon(
+                      Icons.upload,
+                      color: Colors.red,
+                    ),
+                    title: "Food Plus",
+                    subtitle: "Food",
+                    day: "Today",
+                    amount: "Ksh 500"),
+                SizedBox(height: 12),
+                TransactionCard(
+                    icon: Icon(
+                      Icons.upload,
+                      color: Colors.red,
+                    ),
+                    title: "Food Plus",
+                    subtitle: "Food",
+                    day: "Today",
+                    amount: "Ksh 500"),
+                SizedBox(height: 12),
+                TransactionCard(
+                    icon: Icon(
+                      Icons.upload,
+                      color: Colors.red,
+                    ),
+                    title: "Food Plus",
+                    subtitle: "Food",
+                    day: "Today",
+                    amount: "Ksh 500"),
               ],
-            )));
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
+
