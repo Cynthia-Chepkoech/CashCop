@@ -12,19 +12,23 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(title: const Text('Create your Profile'), centerTitle: true),
+      backgroundColor: Colors.purple.shade100,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Text(
+            'Create your Profile',
+            style: TextStyle(fontSize: 32),
+          ),
+          SizedBox(height: 12),
           CircleAvatar(
             radius: 40,
             backgroundColor: Colors.purple.shade300,
           ),
           SizedBox(height: 12),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            margin: const EdgeInsets.symmetric(horizontal: 24),
             decoration: BoxDecoration(
                 color: Colors.purple.shade50,
                 borderRadius: BorderRadius.circular(12)),
@@ -45,7 +49,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   MaterialPageRoute(builder: (context) => const Homepage()));
             },
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
+              margin: const EdgeInsets.symmetric(horizontal: 24),
               padding: const EdgeInsets.all(8),
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width,

@@ -16,6 +16,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  String name = "Mike";
   final List<Widget> screens = [
     const Homescreen(),
     const Transactions(),
@@ -46,18 +47,19 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.purple.shade100,
-      
       body: screens[selectedIndex],
-      
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedIndex,
+          backgroundColor: Colors.purple.shade300,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
           onTap: changeTab,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home, color: Colors.black), label: "home"),
+                backgroundColor: Colors.purple.shade300,
+                icon: Icon(Icons.home, color: Colors.black),
+                label: "home"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.analytics, color: Colors.black),
                 label: "transactions"),

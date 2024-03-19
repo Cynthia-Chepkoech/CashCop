@@ -14,7 +14,11 @@ class Transactions extends StatelessWidget {
           flex: 2,
           child: Container(
             padding: const EdgeInsets.only(top: 32, left: 12, right: 12),
-            color: Colors.purpleAccent,
+            decoration: BoxDecoration(
+                color: Colors.purple.shade200,
+                borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(12),
+                    bottomRight: Radius.circular(12))),
             child: const Center(child: LineChartWidget()),
           ),
         ),
@@ -64,4 +68,3 @@ class Transactions extends StatelessWidget {
     );
   }
 }
-
